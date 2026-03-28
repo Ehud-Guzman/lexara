@@ -69,7 +69,7 @@ export default function Contact() {
             {/* Urgent */}
             <div className="border border-[#d7c4a1] bg-[#fbf8f2] p-6 shadow-sm">
               <p className="text-[9px] tracking-[0.35em] uppercase text-[#9b7630] mb-2">Urgent Matters</p>
-              <p className="font-serif text-2xl font-bold text-[#1f2430] mb-1">+254 700 111 222</p>
+              <p className="font-serif text-2xl font-bold text-[#1f2430] mb-1">+254 746 527 253</p>
               <p className="text-xs text-[#7a7f89]">Available 24/7 for existing clients only</p>
             </div>
 

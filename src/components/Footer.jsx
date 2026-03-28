@@ -102,7 +102,7 @@ export default function Footer() {
                 Urgent Matters
               </p>
               <p className="text-lg font-serif font-bold text-[#1f2430]">
-                +254 700 111 222
+                +254 746 527 253
               </p>
               <p className="text-xs text-[#7a7f89] mt-1">
                 24/7 · Existing clients only
