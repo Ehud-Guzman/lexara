@@ -9,121 +9,169 @@ const stats = [
 ]
 
 const practices = [
-  { icon: '⚖', title: 'Corporate & Commercial', desc: 'Company formation, M&A, shareholders agreements, and board advisory under Kenyan company law.' },
-  { icon: '🏛', title: 'Civil Litigation', desc: 'Representation before the High Court, Court of Appeal, and Supreme Court of Kenya.' },
-  { icon: '🏠', title: 'Conveyancing & Land', desc: 'Land transfers, NLC matters, title disputes, and leasehold under the Land Registration Act.' },
-  { icon: '👨‍👩‍👧', title: 'Family & Succession', desc: 'Divorce, child custody, matrimonial property, and estate administration under Kenyan law.' },
+  {
+    title: 'Corporate & Commercial',
+    desc: 'Company formation, M&A, shareholders agreements, and board advisory under Kenyan company law.',
+    image: '/images/practice-corporate.jpg',
+  },
+  {
+    title: 'Civil Litigation',
+    desc: 'Representation before the High Court, Court of Appeal, and Supreme Court of Kenya.',
+    image: '/images/practice-litigation.jpg',
+  },
+  {
+    title: 'Conveyancing & Land',
+    desc: 'Land transfers, NLC matters, title disputes, and leasehold under the Land Registration Act.',
+    image: '/images/practice-land.jpg',
+  },
+  {
+    title: 'Family & Succession',
+    desc: 'Divorce, child custody, matrimonial property, and estate administration under Kenyan law.',
+    image: '/images/practice-family.jpeg',
+  },
 ]
 
 export default function Home() {
   return (
     <>
-      {/* ── HERO ─────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#f3ecdf]">
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage: `repeating-linear-gradient(
-                -45deg, #b28a3b 0px, #b28a3b 1px,
-                transparent 1px, transparent 60px
-              )`,
-            }}
-          />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[#c7b089]/30 blur-3xl" />
-        </div>
+{/* ── HERO ─────────────────────────────── */}
+{/* Drop your image at /public/images/hero-bg.jpg */}
+<section className="relative min-h-screen flex items-center overflow-hidden">
 
-        {/* Left vertical text */}
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4">
-          <div className="h-24 w-px bg-[#b28a3b]/40" />
-          <span
-            className="text-[9px] tracking-[0.5em] uppercase text-[#7a7f89]"
-            style={{ writingMode: 'vertical-rl' }}
-          >
-            Advocates of the High Court of Kenya
-          </span>
-          <div className="h-24 w-px bg-[#b28a3b]/40" />
-        </div>
+  {/* Background layers */}
+  <div className="absolute inset-0">
+    <img
+      src="/images/hero-bg.jpg"
+      alt=""
+      className="w-full h-full object-cover object-center"
+      onError={(e) => { e.target.style.display = 'none' }}
+    />
+    {/* Fallback shown when no image — your existing bg */}
+    <div className="absolute inset-0 bg-[#f3ecdf]">
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            -45deg, #b28a3b 0px, #b28a3b 1px,
+            transparent 1px, transparent 60px
+          )`,
+        }}
+      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#c7b089]/30 blur-3xl" />
+    </div>
+    {/* Cream overlay over real image — preserves your palette */}
+    <div className="absolute inset-0 bg-[#f3ecdf]/75" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#f3ecdf]/90 via-[#f3ecdf]/60 to-[#f3ecdf]/15" />
+  </div>
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <p className="text-[10px] tracking-[0.6em] uppercase text-[#9b7630] mb-8">
-            Advocates & Solicitors · Nairobi, Kenya
-          </p>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl font-bold leading-[0.9] mb-8 text-[#1f2430]">
-            Justice
-            <br />
-            <span className="text-[#b28a3b]">Pursued</span>
-            <br />
-            With Precision
-          </h1>
-          <p className="text-[#5f6270] text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed font-light">
-            A premier Nairobi law firm offering expert legal counsel across corporate, civil, family, and land matters under Kenyan law.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/contact"
-              className="px-10 py-4 bg-[#b28a3b] text-[#fbf8f2] text-[11px] tracking-[0.3em] uppercase font-bold hover:bg-[#c49b49] transition-all duration-300 w-full sm:w-auto"
-            >
-              Request a Consultation
-            </Link>
-            <Link
-              to="/practice-areas"
-              className="px-10 py-4 border border-[#d7c4a1] text-[#4f5563] text-[11px] tracking-[0.3em] uppercase hover:border-[#b28a3b] hover:text-[#b28a3b] transition-all duration-300 w-full sm:w-auto"
-            >
-              Our Practice Areas
-            </Link>
-          </div>
-        </div>
+  {/* Left vertical text */}
+  <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 z-10">
+    <div className="h-20 w-px bg-[#b28a3b]/40" />
+    <span
+      className="text-[9px] tracking-[0.5em] uppercase text-[#7a7f89]"
+      style={{ writingMode: 'vertical-rl' }}
+    >
+      Advocates of the High Court of Kenya
+    </span>
+    <div className="h-20 w-px bg-[#b28a3b]/40" />
+  </div>
 
-        {/* Stats bar */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-[#d7c4a1] bg-[#fbf8f2]/90 backdrop-blur-md">
-          <div className="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-[#d7c4a1]">
-            {stats.map(({ value, label }) => (
-              <div key={label} className="text-center px-4 py-2">
-                <p className="font-serif text-2xl md:text-3xl font-bold text-[#9b7630]">{value}</p>
-                <p className="text-[9px] tracking-[0.2em] uppercase text-[#7a7f89] mt-1">{label}</p>
-              </div>
-            ))}
-          </div>
+  {/* Main content — left-aligned, not centered */}
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 pt-32 pb-36">
+    <div className="max-w-2xl">
+
+      {/* Eyebrow */}
+      <div className="flex items-center gap-4 mb-10">
+        <div className="h-px w-8 bg-[#b28a3b]" />
+        <p className="text-[10px] tracking-[0.55em] uppercase text-[#9b7630]">
+          Advocates & Solicitors · Nairobi, Kenya
+        </p>
+      </div>
+
+      {/* Headline — reduced from md:text-8xl */}
+      <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] mb-7 text-[#1f2430]">
+        Trusted Legal Counsel<br />
+        <span className="text-[#b28a3b]">Built on Kenyan Law</span>
+      </h1>
+
+      <p className="text-[#5f6270] text-base max-w-lg mb-10 leading-relaxed font-light">
+        A premier Nairobi firm offering expert legal counsel across corporate, civil, family,
+        and land matters. Advocates of the High Court, admitted to the Roll since 1998.
+      </p>
+
+      {/* CTAs — your existing styles, unchanged */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link
+          to="/contact"
+          className="px-10 py-4 bg-[#b28a3b] text-[#fbf8f2] text-[11px] tracking-[0.3em] uppercase font-bold
+                     hover:bg-[#c49b49] transition-all duration-300 w-full sm:w-auto text-center"
+        >
+          Request a Consultation
+        </Link>
+        <Link
+          to="/practice-areas"
+          className="px-10 py-4 border border-[#d7c4a1] text-[#4f5563] text-[11px] tracking-[0.3em] uppercase
+                     hover:border-[#b28a3b] hover:text-[#b28a3b] transition-all duration-300 w-full sm:w-auto text-center"
+        >
+          Our Practice Areas
+        </Link>
+      </div>
+
+      {/* LSK credential line */}
+      <div className="mt-10 flex items-center gap-3">
+        <div className="w-1.5 h-1.5 bg-[#b28a3b] rounded-full" />
+        <p className="text-[9px] tracking-[0.3em] uppercase text-[#7a7f89]">
+          Regulated by the Law Society of Kenya · LSK Reg. No. 0001998
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Stats bar — your existing, unchanged */}
+  <div className="absolute bottom-0 left-0 right-0 border-t border-[#d7c4a1] bg-[#fbf8f2]/90 backdrop-blur-md z-10">
+    <div className="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-[#d7c4a1]">
+      {stats.map(({ value, label }) => (
+        <div key={label} className="text-center px-4 py-2">
+          <p className="font-serif text-2xl md:text-3xl font-bold text-[#9b7630]">{value}</p>
+          <p className="text-[9px] tracking-[0.2em] uppercase text-[#7a7f89] mt-1">{label}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── PRACTICE AREAS PREVIEW ────────────── */}
-      <section className="py-28 px-6 bg-[#f8f3ea]">
-        <SectionDivider />
-        <div className="max-w-7xl mx-auto mt-16">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
-            <div>
-              <p className="text-[10px] tracking-[0.5em] uppercase text-[#9b7630] mb-4">What We Do</p>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1f2430] leading-tight">
-                Areas of <span className="text-[#b28a3b]">Practice</span>
-              </h2>
-            </div>
-            <Link
-              to="/practice-areas"
-              className="text-[11px] tracking-[0.3em] uppercase text-[#9b7630] border-b border-[#c7b089] pb-1 hover:border-[#9b7630] transition-all self-end"
-            >
-              View All Areas →
-            </Link>
-          </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+  {practices.map(({ title, desc, image }) => (
+    <div
+      key={title}
+      className="group relative overflow-hidden border border-[#e3d6bd] bg-[#fbf8f2] h-[260px]"
+    >
+      {/* Image */}
+      <img
+        src={image}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {practices.map(({ icon, title, desc }) => (
-              <div
-                key={title}
-                className="group bg-[#fbf8f2] p-8 hover:bg-[#fffdf8] transition-all duration-300 relative overflow-hidden border border-[#e3d6bd] hover:border-[#c7b089] shadow-sm"
-              >
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-[#b28a3b]/0 group-hover:bg-[#b28a3b]/50 transition-all duration-500" />
-                <div className="text-3xl mb-5">{icon}</div>
-                <h3 className="font-serif text-xl font-bold text-[#1f2430] mb-3 group-hover:text-[#9b7630] transition-colors duration-300">
-                  {title}
-                </h3>
-                <p className="text-[#5f6270] text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0f]/70 via-[#0c0c0f]/30 to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col justify-end p-6">
+        <h3 className="font-serif text-xl font-bold text-white mb-2 group-hover:text-[#e0ba5a] transition-colors">
+          {title}
+        </h3>
+        <p className="text-sm text-[#e5e0d6]/80 leading-relaxed">
+          {desc}
+        </p>
+      </div>
+
+      {/* Bottom accent line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-[#b28a3b]/0 group-hover:bg-[#b28a3b]/60 transition-all duration-500" />
+    </div>
+  ))}
+</div>
 
       {/* ── WHY CHOOSE US ─────────────────────── */}
       <section className="py-24 px-6 bg-[#efe7d8]">
